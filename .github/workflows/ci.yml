@@ -15,10 +15,10 @@ jobs:
           java-version: '17'
 
       - name: Compile the project
-        run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip
+        run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip -e -X
   
       - name: Run tests
-        run: mvn -pl riptide-spring-boot-starter test -Dtest=org.zalando.riptide.spring.AccessTokensDefaultCredentialsDirectoryTest#shouldUseCredentialsDirectory
+        run: mvn -pl riptide-spring-boot-starter test -Dtest=org.zalando.riptide.spring.AccessTokensDefaultCredentialsDirectoryTest#shouldUseCredentialsDirectory -e -X
         
       # - name: Set up JDK 8 for NonDex
       #   uses: actions/setup-java@v2
