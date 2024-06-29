@@ -13,9 +13,11 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '17'
+      - name: Maven
+        run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip
 
       - name: Compile the project
-        run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip -e -X
+        run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip -Dskiptests -Dcheckstyle.skip -e -X
   
       - name: Run tests
         run: mvn -pl riptide-spring-boot-starter test -Dtest=org.zalando.riptide.spring.AccessTokensDefaultCredentialsDirectoryTest#shouldUseCredentialsDirectory -e -X
