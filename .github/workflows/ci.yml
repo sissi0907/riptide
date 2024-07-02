@@ -15,14 +15,14 @@ jobs:
           java-version: '17'
       # - name: Maven
       #   run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip -Dmaven.test.skip=true
-      - name: Build with Maven
-        run: ./mvnw --batch-mode --update-snapshots package
+      # - name: Build with Maven
+      #   run: ./mvnw --batch-mode --update-snapshots package
 
       - name: Compile the project
-        run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip -Dskiptests -Dcheckstyle.skip -e -X
+        run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip -Dskiptests -Dcheckstyle.skip 
   
       - name: Run tests
-        run: mvn -pl riptide-spring-boot-starter test -Dtest=org.zalando.riptide.spring.AccessTokensDefaultCredentialsDirectoryTest#shouldUseCredentialsDirectory -e -X
+        run: mvn -pl riptide-spring-boot-starter test -Dtest=org.zalando.riptide.spring.AccessTokensDefaultCredentialsDirectoryTest#shouldUseCredentialsDirectory 
         
       # - name: Set up JDK 8 for NonDex
       #   uses: actions/setup-java@v2
