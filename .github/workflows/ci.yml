@@ -13,8 +13,8 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '17'
-      - name: Maven
-        run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip -Dmaven.test.skip=true
+      # - name: Maven
+      #   run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip -Dmaven.test.skip=true
 
       - name: Compile the project
         run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip -Dskiptests -Dcheckstyle.skip -e -X
