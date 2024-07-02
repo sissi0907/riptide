@@ -15,6 +15,8 @@ jobs:
           java-version: '17'
       # - name: Maven
       #   run: mvn clean install -Drat.skip -Dskiptests -Dcheckstyle.skip -Dmaven.test.skip=true
+      - name: Build with Maven
+        run: ./mvnw --batch-mode --update-snapshots package
 
       - name: Compile the project
         run: mvn test-compile -pl riptide-spring-boot-starter -am -Drat.skip -Dskiptests -Dcheckstyle.skip -e -X
